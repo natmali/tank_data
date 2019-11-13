@@ -37,6 +37,7 @@ watercorp_qpcr_data$tank <- replace(watercorp_qpcr_data$tank, watercorp_qpcr_dat
 watercorp_qpcr_data <- watercorp_qpcr_data %>% 
   fill(tank, sample_date, temperature, conductivity, free_chlorine, total_chlorine) %>% # Filling in NA's with the name above it 
   select(-"Label on Tubes", -"Comment", -"Balmuthia-qPCR...14", -"Balmuthia-qPCR...22") %>% 
+  slice(1:53, .preserve = FALSE) %>% # Cutting out the blanks at the bottom of the page
   view()
 
   
