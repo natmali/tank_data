@@ -379,6 +379,23 @@ waresh_qpcr_tidied_data <- waresh_qpcr_tidied_data %>%
   rename(tank = "ID") %>% 
   view()
 
+waresh_qpcr_tidied_data$tank <- replace(waresh_qpcr_tidied_data$tank, waresh_qpcr_tidied_data$tank == "Walliston LHL 1", "WallistonLHL 1")
+waresh_qpcr_tidied_data$tank <- replace(waresh_qpcr_tidied_data$tank, waresh_qpcr_tidied_data$tank == "Walliston LHL 2", "WallistonLHL 2")
+waresh_qpcr_tidied_data$tank <- replace(waresh_qpcr_tidied_data$tank, waresh_qpcr_tidied_data$tank == "Walliston LHL 3", "WallistonLHL 3")
+waresh_qpcr_tidied_data$tank <- replace(waresh_qpcr_tidied_data$tank, waresh_qpcr_tidied_data$tank == "Walliston LHL 4", "WallistonLHL 4")
+
+waresh_qpcr_tidied_data$tank <- replace(waresh_qpcr_tidied_data$tank, waresh_qpcr_tidied_data$tank == "West Terrace 1", "WestTerrace 1")
+waresh_qpcr_tidied_data$tank <- replace(waresh_qpcr_tidied_data$tank, waresh_qpcr_tidied_data$tank == "West Terrace 2", "WestTerrace 2")
+waresh_qpcr_tidied_data$tank <- replace(waresh_qpcr_tidied_data$tank, waresh_qpcr_tidied_data$tank == "West Terrace 3", "WestTerrace 3")
+waresh_qpcr_tidied_data$tank <- replace(waresh_qpcr_tidied_data$tank, waresh_qpcr_tidied_data$tank == "West Terrace 4", "WestTerrace 4")
+waresh_qpcr_tidied_data$tank <- replace(waresh_qpcr_tidied_data$tank, waresh_qpcr_tidied_data$tank == "West Terrace 5", "WestTerrace 5")
+waresh_qpcr_tidied_data$tank <- replace(waresh_qpcr_tidied_data$tank, waresh_qpcr_tidied_data$tank == "West Terrace 6", "WestTerrace 6")
+
+view(waresh_qpcr_tidied_data)
+
+waresh_qpcr_tidied_data <- waresh_qpcr_tidied_data %>% 
+  separate(tank, into = c("tank", "replicate"), convert = TRUE) %>% 
+  view()
 
 
 
