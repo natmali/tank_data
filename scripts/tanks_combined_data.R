@@ -12,6 +12,7 @@ tanks_qpcr_combined_data <- inner_join(watercorp_qpcr_tidied_data, waresh_qpcr_t
 
 view(tanks_qpcr_combined_data)
 
+write_csv(tanks_qpcr_combined_data, "data/tanks_qpcr_combined_data.csv")
 
 ## Visualisation 
 
