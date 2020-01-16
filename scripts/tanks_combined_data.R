@@ -19,6 +19,22 @@ write_csv(tanks_qpcr_combined_data, "data/tanks_qpcr_combined_data.csv")
 tanks_qpcr_combined_data %>% 
   ggplot(aes(x = waresh_acanthamoeba_spp,
            y = temperature,
-           colour = tank,
-           shape = sample_type)) +
+           z = free_chlorine,
+           colour = sample_type)) +
+  geom_point() +
+  facet_wrap(~tank)
+
+
+tanks_qpcr_combined_data %>% 
+  count(tanks_qpcr_combined_data$waresh_acanthamoeba_spp == "POS") %>% 
+  group_by(sample_type)
+
+
+tanks_qpcr_combined_data %>% 
+  ggplot(aes(x = sample_type,
+             y = waresh_acanthamoeba_spp,
+             colour = tank)) +
   geom_point()
+
+
+
